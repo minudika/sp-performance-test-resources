@@ -4,9 +4,9 @@
 define stream inputStream (iijtimestamp long,value float);
 
 from inputStream
-select iijtimestamp,value
+select time:timestampInMilliseconds(time:currentTimestamp(), "yyyy-MM-DD HH:MM:SS") as currentTimeStamp,value
 insert into tempStream;
 
-from tempStream#throughput:throughput(iijtimestamp,"both")
+from tempStream#throughput:throughput(currentTimeStamp,"both")
 select "aa" as tempTrrb
 insert into tempStream1;
