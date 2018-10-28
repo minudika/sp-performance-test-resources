@@ -3,7 +3,8 @@
 @source(type = 'tcp', context='inputStream',@map(type='binary'))
 define stream inputStream (iijtimestamp long,isPowerSaveEnabled bool,sensorId int,longitude double,latitude double,humidity float,sensorValue double);
 
-@store(type="rdbms",jdbc.url="jdbc:mysql://streamprocessor.cd3cwezibdu8.us-east-1.rds.amazonaws.com/StreamProcessor",username="xxx",password="xxxx",jdbc.driver.name='com.mysql.jdbc.Driver')
+@store(type="rdbms",jdbc.url="jdbc:mysql://localhost:3306/StreamProcessor",username="root",password="root",jdbc.driver
+.name='com.mysql.jdbc.Driver')
 
 @primarykey('sensorId')
 define table inputTable (iijtimestamp long,isPowerSaveEnabled bool,sensorId int,longitude double,latitude double,humidity float,sensorValue double);
