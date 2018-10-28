@@ -12,6 +12,6 @@ select
  vz, e2.ax as ax,e2.ay as ay, e2.az as az, e1.iij_timestamp as iij_timestamp
 insert into outputStream;
 
-from outputStream#throughput:throughput(iij_timestamp,sid,eventtt,x,y,z,v_abs,a_abs,vx,vy,vz,ax,ay,az,"both")
+from outputStream#throughput:throughput(iij_timestamp, "both")
 select "aa" as tempTrrb
 insert into tmpStream;
