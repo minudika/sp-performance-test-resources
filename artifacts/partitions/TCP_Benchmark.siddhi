@@ -9,7 +9,8 @@ from inputStream[isPowerSaveEnabled==true]
 select *
 insert into tempStream;
 
+end;
+
 from tempStream#throughput:throughput(iijtimestamp, "both")
 select "aa" as tempTrrb
-insert into tempStream1;
-end
+insert into tempStream2;
